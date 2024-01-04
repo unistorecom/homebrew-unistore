@@ -5,11 +5,11 @@
 class UnistoreCli < Formula
   desc ""
   homepage "https://github.com/unistorecom/cli"
-  version "0.0.7"
+  version "0.0.8"
 
   on_macos do
-    url "https://github.com/unistorecom/cli/releases/download/0.0.7/cli_0.0.7_darwin_all.tar.gz", using: CurlDownloadStrategy
-    sha256 "c441e49e1181c838c43cde029a6fb2d0543b8f8919c9979b765c309409eb0ef5"
+    url "https://cdn.dev.unistore.tech/public/cli/0.0.8/cli_0.0.8_darwin_all.tar.gz", using: CurlDownloadStrategy
+    sha256 "1a3c4f59639a7d27e8adf00b1dcc927f3d44861f00e5202b57de0f4bceed65d6"
 
     def install
       bin.install "cli"
@@ -17,17 +17,17 @@ class UnistoreCli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/unistorecom/cli/releases/download/0.0.7/cli_0.0.7_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "76901761f02709ec943ea332dc9c9028b68f1e06d8eef10cde1efe7ed3a843bf"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://cdn.dev.unistore.tech/public/cli/0.0.8/cli_0.0.8_linux_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "28bfcf378c8b42bccc0311d1f42daa9c07080941ef2c4d457990d63d5044e2d9"
 
       def install
         bin.install "cli"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/unistorecom/cli/releases/download/0.0.7/cli_0.0.7_linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "3a52da0795ad5f39a464ebbe442b21d67adcf963002833de385d4cd1e9366ccb"
+    if Hardware::CPU.intel?
+      url "https://cdn.dev.unistore.tech/public/cli/0.0.8/cli_0.0.8_linux_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "349fd4cf19342cc51d090f96779878b1eed10ec220435c08ca93f6695b039353"
 
       def install
         bin.install "cli"
