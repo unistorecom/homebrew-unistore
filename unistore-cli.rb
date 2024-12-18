@@ -5,11 +5,11 @@
 class UnistoreCli < Formula
   desc ""
   homepage "https://github.com/unistorecom/cli"
-  version "0.0.51"
+  version "0.0.52"
 
   on_macos do
-    url "https://cdn.dev.unistore.tech/public/cli/0.0.51/cli_0.0.51_darwin_all.tar.gz", using: CurlDownloadStrategy
-    sha256 "c2c48198cc8df18092ec2c78e6011d6bec0113ef0d02f98ee156d90693cea016"
+    url "https://cdn.dev.unistore.tech/public/cli/0.0.52/cli_0.0.52_darwin_all.tar.gz", using: CurlDownloadStrategy
+    sha256 "273329c1bb36e11fba669e10c34b96af7feef71d91581f807362d53e78aabbe7"
 
     def install
       bin.install "cli" => "unistore"
@@ -19,8 +19,8 @@ class UnistoreCli < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://cdn.dev.unistore.tech/public/cli/0.0.51/cli_0.0.51_linux_amd64.tar.gz", using: CurlDownloadStrategy
-        sha256 "fc604b57c03c5d0ea919c5809a91349cbeb14095896d1f547ff04b13be8b3282"
+        url "https://cdn.dev.unistore.tech/public/cli/0.0.52/cli_0.0.52_linux_amd64.tar.gz", using: CurlDownloadStrategy
+        sha256 "5d9600bfef42b0fb189c34b7c764a3368c665344e89a5b33ec0f30c5d0a00f17"
 
         def install
           bin.install "cli" => "unistore"
@@ -29,8 +29,8 @@ class UnistoreCli < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://cdn.dev.unistore.tech/public/cli/0.0.51/cli_0.0.51_linux_arm64.tar.gz", using: CurlDownloadStrategy
-        sha256 "61ed897d7bee044339638155daf9eebb385a05ff4d8d710a67c9633feba92a6e"
+        url "https://cdn.dev.unistore.tech/public/cli/0.0.52/cli_0.0.52_linux_arm64.tar.gz", using: CurlDownloadStrategy
+        sha256 "f806a6c2968fa39e9a730bc61bdc80dac96ec16a0ae5d6b75751ffd0a9bbe974"
 
         def install
           bin.install "cli" => "unistore"
